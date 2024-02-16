@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-import {Setup} from "./Setup.sol";
+import {Setup, YourContract} from "./Setup.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 abstract contract BeforeAfter is Setup {
@@ -30,24 +30,24 @@ abstract contract BeforeAfter is Setup {
  */
 
     function __before(address user) internal {
-        yourContract.BuilderStreamInfo streamInfo = yourContract.streamedBuilders(user);
+        (uint256 cap, uint256 last, address token) = yourContract.streamedBuilders(user);
 
-        if (streamInfo.optionalTokenAddress != address(0)) {
-            _before.tokenBalance = IERC20(streamInfo.optionalTokenAddress).balanceOf(user);
+        if (token != address(0)) {
+            _before.tokenBalance[token] = IERC20(token).balanceOf(user);
         } else {
-            _before.tokenBalance = user.balance;
+            _before.tokenBalance[token] = user.balance;
         }
 
         _before.claimableByUser = yourContract.unlockedBuilderAmount(user);
     }
 
     function __after(address user) internal {
-        yourContract.BuilderStreamInfo streamInfo = yourContract.streamedBuilders(user);
+        (uint256 cap, uint256 last, address token) = yourContract.streamedBuilders(user);
 
-        if (streamInfo.optionalTokenAddress != address(0)) {
-            _after.tokenBalance = IERC20(streamInfo.optionalTokenAddress).balanceOf(user);
+        if (token != address(0)) {
+            _after.tokenBalance[token] = IERC20(token).balanceOf(user);
         } else {
-            _after.TokenBalance = user.balance;
+            _after.tokenBalance[token] = user.balance;
         }
 
         _after.claimableByUser = yourContract.unlockedBuilderAmount(user);
