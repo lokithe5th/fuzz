@@ -26,7 +26,7 @@ contract YourContract is Ownable {
     error NOT_ENOUGH_FUNDS_IN_CONTRACT();
     error NOT_ENOUGH_FUNDS_IN_STREAM();
 
-    constructor() { }
+    constructor() Ownable(msg.sender) { }
 
     struct BuilderData {
         address builderAddress;

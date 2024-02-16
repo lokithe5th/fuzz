@@ -6,4 +6,4 @@
 	url = https://github.com/openzeppelin/openzeppelin-contracts
 [submodule "lib/chimera"]
 	path = lib/chimera
-	url = https://github.com/Recon-Fuzz/chimera
+	url = https://github.com/recon-fuzz/chimera
