@@ -1,5 +1,6 @@
 
 testMode: "assertion"
+testLimit: 1000
 prefix: "invariant_"
 coverage: true
 corpusDir: "echidna"
