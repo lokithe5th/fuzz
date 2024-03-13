@@ -3,7 +3,7 @@ testMode: "assertion"
 testLimit: 1000
 prefix: "invariant_"
 coverage: true
-corpusDir: "echidna"
+corpusDir: "echidnaTest"
 balanceAddr: 0x1043561a8829300000
 balanceContract: 0x1043561a8829300000
 filterFunctions: []
