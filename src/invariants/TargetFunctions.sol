@@ -26,7 +26,11 @@ abstract contract TargetFunctions is BaseTargetFunctions, Properties, BeforeAfte
     }
 
     function yourContract_transferOwnership(address newOwner) public {
-      yourContract.transferOwnership(newOwner);
+      try yourContract.transferOwnership(newOwner) {
+
+      } catch {
+        t(false, "Ownership not transferred");
+      }
     }
 
     function yourContract_updateBuilderStreamCap(address _builder, uint256 _cap) public {
