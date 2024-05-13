@@ -3,11 +3,11 @@
 pragma solidity ^0.8.0;
 
 import {Asserts} from "@chimera/Asserts.sol";
-import {Setup, YourContract} from "./Setup.sol";
+import {Setup} from "./Setup.sol";
 
 abstract contract Properties is Setup, Asserts {
 
-    function crytic_canary() internal view returns (bool) {
+    function crytic_canary() public view returns (bool) {
         return false;
     }
 }
