@@ -10,4 +10,8 @@ abstract contract Properties is Setup, Asserts {
     function crytic_canary() public view returns (bool) {
         return false;
     }
+
+    function crytic_canary_ok() public view returns (bool) {
+        return true;
+    }
 }
