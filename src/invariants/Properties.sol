@@ -6,7 +6,7 @@ import {Asserts} from "@chimera/Asserts.sol";
 import {Setup} from "./Setup.sol";
 
 abstract contract Properties is Setup, Asserts {
-
+// test
     function crytic_canary() public view returns (bool) {
         return false;
     }
