@@ -1,5 +1,7 @@
 # Testing in Foundry - Part 3
 
+test
+
 ## Let's get fuzzical!
 
 If you've been following along you'll know that we've gone from no tests, up to a fairly well-covered unit test repo for the BuidlGuidl's streaming contract. Although this is great to make sure the contracts do what we want them to do under ideal circumstances, on the blockchain circumstances may never be ideal.
