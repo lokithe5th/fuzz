@@ -13,7 +13,7 @@ contract YourContract is Ownable {
     }
 
     mapping(address => BuilderStreamInfo) public streamedBuilders;
-    // ToDo. Change to 30 days
+    // ToDo. Change to 30 days again (other email)
     uint256 public constant FREQUENCY = 2592000; // 30 days
 
     event Withdraw(address indexed to, uint256 amount, string reason);
