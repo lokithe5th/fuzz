@@ -11,6 +11,7 @@ crytic-export
 # Docs
 docs/
 lib
+out
 
 # Dotenv file
 .env
